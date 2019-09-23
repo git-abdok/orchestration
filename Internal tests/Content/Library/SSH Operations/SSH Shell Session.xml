@@ -3,16 +3,12 @@
   <descriptionCdata><![CDATA[49d60fed-b07a-4739-ae20-9d2c909d3b4c.05ed00d4-4efa-4c64-b6d6-4f41271585ae.transition.description=Closed SSH Shell session
 49d60fed-b07a-4739-ae20-9d2c909d3b4c.22cd52e7-90ae-4f10-a4ba-105964e452a6.description=<pre>Runs multiple SSH command by creating an ssh shell and checking output against regular expressions\n\nInputs\:\nhost - hostname or ip address\nport - the port number for running the command. It overwrites the port given inside the host input -in a syntax like host\:port-, if this exists.\ncommand - the commands to execute. This should be made up of 'send <command>' and 'expect <regular expression>' statements separated be newlines.\nusername - username to connect as\npassword - password\nprivateKeyFile - private key to be used during ssh authentication.\ntimeout - (optional, default 90 seconds) time in milliseconds to wait for the command to complete\nnewlineCharacters - The character sequence to send as the enter key being pressed after each 'send' statement in a send expect script is processed. Either '\\r\\n' '\\n' '\\r' or a comma delimited list of ASCII escape sequences.\ncharacterDelay - the delay in milliseconds between sending characters of the SSH commands. \n\nResponses\:\nsuccess - the command was executed successfully\nfailure - the command could not be executed\n\nExtra Results\:\nvisualized - the output of the command in XML format\nSTDOUT - the STDOUT of the command\n</pre>
 49d60fed-b07a-4739-ae20-9d2c909d3b4c.2bc34924-c444-42ff-8ff2-e8b2133cf993.prompt=Password\:
-49d60fed-b07a-4739-ae20-9d2c909d3b4c.33233085-41e0-452a-9d54-be74ccc40d8a.prompt=Private Key File\: 
 49d60fed-b07a-4739-ae20-9d2c909d3b4c.33526fd3-bf66-47c0-b77e-d7f09f053da8.transition.description=Read contents of shell enviroment variable HPOO
 49d60fed-b07a-4739-ae20-9d2c909d3b4c.413fdd65-bbd7-475f-9ec7-f489d31af580.prompt=Port Number\:
-49d60fed-b07a-4739-ae20-9d2c909d3b4c.4d415296-1392-452e-a6f2-066dae7a6e72.prompt=Password\: 
 49d60fed-b07a-4739-ae20-9d2c909d3b4c.5991be37-8b2d-4e95-b4c0-fbf115ea3885.transition.description=Created a SSH Shell session
 49d60fed-b07a-4739-ae20-9d2c909d3b4c.5edff80b-24a1-4edc-8d05-1fbf7ef5e736.transition.description=Enviroment variable created in First SSH Shell matches variable read in Second SSH Shell
-49d60fed-b07a-4739-ae20-9d2c909d3b4c.6a3ab8a9-b546-4113-87cc-26032427da65.prompt=Hostname\: 
 49d60fed-b07a-4739-ae20-9d2c909d3b4c.6aa6b2ea-7cd9-4cec-8d8f-d907cadcb742.callout=This sample shows two SSH Shell operations sharing the same SSH Shell Session.  The first SSH Shell operation creates a shell enviroment variable.  The second SSH Shell operation reads the enviroment variable.  To ensure the SSH Shell session is closed immediately, SSH Shell Logoff is in both the success and failure paths.
 49d60fed-b07a-4739-ae20-9d2c909d3b4c.958d1cbc-a6b6-4931-a768-2fd4f585acff.prompt=Password\:
-49d60fed-b07a-4739-ae20-9d2c909d3b4c.a58c2178-98a6-406c-8531-97ed2ee50303.prompt=Username\: 
 49d60fed-b07a-4739-ae20-9d2c909d3b4c.abc4d8e3-f3d8-4255-851f-5bccdc4d9e18.prompt=UserName\:
 49d60fed-b07a-4739-ae20-9d2c909d3b4c.acf41b90-f70c-4111-b4cc-32526fa48e32.description=<pre>Runs multiple SSH command by creating an ssh shell and checking output against regular expressions\n\nInputs\:\nhost - hostname or ip address\nport - the port number for running the command. It overwrites the port given inside the host input -in a syntax like host\:port-, if this exists.\ncommand - the commands to execute. This should be made up of 'send <command>' and 'expect <regular expression>' statements separated be newlines.\nusername - username to connect as\npassword - password\nprivateKeyFile - private key to be used during ssh authentication.\ntimeout - (optional, default 90 seconds) time in milliseconds to wait for the command to complete\nnewlineCharacters - The character sequence to send as the enter key being pressed after each 'send' statement in a send expect script is processed. Either '\\r\\n' '\\n' '\\r' or a comma delimited list of ASCII escape sequences.\ncharacterDelay - the delay in milliseconds between sending characters of the SSH commands. \n\nResponses\:\nsuccess - the command was executed successfully\nfailure - the command could not be executed\n\nExtra Results\:\nvisualized - the output of the command in XML format\nSTDOUT - the STDOUT of the command\n</pre>
 49d60fed-b07a-4739-ae20-9d2c909d3b4c.b141591d-3ef5-4ddf-9806-9acbc207d6a7.prompt=HostName\:
@@ -28,7 +24,7 @@
   <name>SSH Shell Session</name>
   <categories/>
   <inputs>
-    <userInputBinding id="6a3ab8a9-b546-4113-87cc-26032427da65">
+    <staticBinding id="a9d38e01-a766-4198-8eef-af6258eec65a">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -38,11 +34,9 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>host</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>centos</value>
       <record>false</record>
-      <prompt>49d60fed-b07a-4739-ae20-9d2c909d3b4c.6a3ab8a9-b546-4113-87cc-26032427da65.prompt</prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
+    </staticBinding>
     <staticBinding id="5fd31f91-6c0c-463e-a60c-7274a51e48ee">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
@@ -56,7 +50,7 @@
       <value>22</value>
       <record>false</record>
     </staticBinding>
-    <userInputBinding id="a58c2178-98a6-406c-8531-97ed2ee50303">
+    <staticBinding id="ef3b4c6b-1b79-49e7-8a2f-4a6af70e8a06">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -66,12 +60,10 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>username</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>mfadmin</value>
       <record>false</record>
-      <prompt>49d60fed-b07a-4739-ae20-9d2c909d3b4c.a58c2178-98a6-406c-8531-97ed2ee50303.prompt</prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="4d415296-1392-452e-a6f2-066dae7a6e72">
+    </staticBinding>
+    <staticBinding id="f1303bd1-0735-41df-8f55-c7b46b915609">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -81,12 +73,10 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>password</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>{OBFUSCATED}nnfuPcMjqIE3+07tT5UJTA==</value>
       <record>false</record>
-      <prompt>49d60fed-b07a-4739-ae20-9d2c909d3b4c.4d415296-1392-452e-a6f2-066dae7a6e72.prompt</prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
-    <userInputBinding id="33233085-41e0-452a-9d54-be74ccc40d8a">
+    </staticBinding>
+    <staticBinding id="3fc7bb46-2e6d-4f96-8fea-4041ad61a614">
       <annotation></annotation>
       <assignFromContext>true</assignFromContext>
       <assignToContext>true</assignToContext>
@@ -96,11 +86,9 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>privateKeyFile</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value></value>
       <record>false</record>
-      <prompt>49d60fed-b07a-4739-ae20-9d2c909d3b4c.33233085-41e0-452a-9d54-be74ccc40d8a.prompt</prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
+    </staticBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="b56097bb-dffb-48c4-9a5c-f12203ce10ff">
