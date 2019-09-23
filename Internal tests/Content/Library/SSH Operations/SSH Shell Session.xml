@@ -138,8 +138,8 @@
     <callout id="6aa6b2ea-7cd9-4cec-8d8f-d907cadcb742">
       <text>49d60fed-b07a-4739-ae20-9d2c909d3b4c.6aa6b2ea-7cd9-4cec-8d8f-d907cadcb742.callout</text>
       <bounds>
-        <x>325.0</x>
-        <y>30.0</y>
+        <x>517.0</x>
+        <y>19.0</y>
         <width>268.0</width>
         <height>120.0</height>
       </bounds>
@@ -159,6 +159,19 @@
       </bounds>
       <layer>1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="3ba6351a-3913-40e5-91df-453a4e75d714">
+        <baseIcon>workstation_network.png</baseIcon>
+        <basePath>/Others/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="173bbc73-fe75-417a-8337-6f277b60e97b">
+            <baseIcon>start.png</baseIcon>
+            <basePath>/Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -822,8 +835,8 @@ expect (.*\s*)+[\$#]$</value>
             </point>
           </positions>
           <labelPosition>
-            <x>485.99207830259047</x>
-            <y>-19.220086949328504</y>
+            <x>481.30853460697926</x>
+            <y>-0.22020699989594014</y>
           </labelPosition>
         </transition>
         <transition id="b7268d93-068b-4788-bd2f-dd848466123c">
@@ -896,8 +909,8 @@ expect (.*\s*)+[\$#]$</value>
             </point>
           </positions>
           <labelPosition>
-            <x>508.1047946785001</x>
-            <y>-59.71590723673891</y>
+            <x>556.1692599226623</x>
+            <y>-6.506220061398069</y>
           </labelPosition>
         </transition>
       </transitions>
@@ -1366,6 +1379,12 @@ expect (.*\s*)*?
       </bounds>
       <layer>15</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="fb5a0aca-1367-436f-af42-2bb7da98ee81">
+        <baseIcon>return_failure.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
