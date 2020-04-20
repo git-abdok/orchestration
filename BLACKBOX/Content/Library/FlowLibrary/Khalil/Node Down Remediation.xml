@@ -3057,7 +3057,7 @@
           <linkMode>false</linkMode>
           <responseSymbol>success</responseSymbol>
           <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
+          <transitionValue>39.0</transitionValue>
           <destination>
             <refId>5e995b08-c056-49e1-b724-eec8155c4b30</refId>
           </destination>
@@ -3471,7 +3471,7 @@
           <linkMode>false</linkMode>
           <responseSymbol>success</responseSymbol>
           <shouldHandoff>false</shouldHandoff>
-          <transitionValue>0.0</transitionValue>
+          <transitionValue>6.0</transitionValue>
           <destination>
             <refId>ed603a86-477f-4407-9312-e0090e51ab38</refId>
           </destination>
