@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow id="747e1607-3100-4589-bf5b-4ee9b70a1608">
-  <descriptionCdata><![CDATA[747e1607-3100-4589-bf5b-4ee9b70a1608.9423d4b2-5f5b-4a92-a188-f2eeccb5bddc.prompt=Admin Password
-747e1607-3100-4589-bf5b-4ee9b70a1608.c595c065-8cb8-4e9c-b2a9-bdf9b9fba237.description=<pre>\nCreates a new user in Active Directory.\n\nInputs\:\n    host - Domain controller.\n    OU - The OU (Organization Unit) or CN (Common Name) to add the user to.\nExample\: CN\=Users.\n    userFullName - Full name of user.\nExamples\: Bob Smith.\n    userPassword - Password for user. (Should respect the password restrictions imposed by AD)\n    sAMAccountName -  New user sAMAAccount name. This is the user logon name (pre-Windows 2000).\nExamples\: bsmith. \nThe complete user account name will look like this "DOMAINNAME\\bsmith".\n    altuser -  Username used to login on domain controller.\n    altpass - Password for altuser.\n    escapeChars - Add this input and set the value to 'true' if you want the operation to escape the special AD characters.\n\nResponses\:\n    success - Operation created new user in AD.\n    failure - Operation failed to create the user.\n\nResults\:\n    Operation return code.\n\nExtra Results\:\n    userDN - The distinguished name of the newly created user ('userFullName' input).\n\nNotes\:\n1. If the inputs contain special characters make sure you enter these inputs either with no special character escaped and set escapeChars to true, either with all the special characters escaped. The special AD characters are '\#','\=','"','<','>',',','+',';','\\','"''.\n2. If sAMAccountName input contains special characters these will be replaced with the "_" character. The following characters are considered special regarding sAMAccountName\: '"','\\','/','[',']','\:',';','|','\=',',','+','*','?','<','>'.\n\n</pre>
+  <descriptionCdata><![CDATA[747e1607-3100-4589-bf5b-4ee9b70a1608.c595c065-8cb8-4e9c-b2a9-bdf9b9fba237.description=<pre>\nCreates a new user in Active Directory.\n\nInputs\:\n    host - Domain controller.\n    OU - The OU (Organization Unit) or CN (Common Name) to add the user to.\nExample\: CN\=Users.\n    userFullName - Full name of user.\nExamples\: Bob Smith.\n    userPassword - Password for user. (Should respect the password restrictions imposed by AD)\n    sAMAccountName -  New user sAMAAccount name. This is the user logon name (pre-Windows 2000).\nExamples\: bsmith. \nThe complete user account name will look like this "DOMAINNAME\\bsmith".\n    altuser -  Username used to login on domain controller.\n    altpass - Password for altuser.\n    escapeChars - Add this input and set the value to 'true' if you want the operation to escape the special AD characters.\n\nResponses\:\n    success - Operation created new user in AD.\n    failure - Operation failed to create the user.\n\nResults\:\n    Operation return code.\n\nExtra Results\:\n    userDN - The distinguished name of the newly created user ('userFullName' input).\n\nNotes\:\n1. If the inputs contain special characters make sure you enter these inputs either with no special character escaped and set escapeChars to true, either with all the special characters escaped. The special AD characters are '\#','\=','"','<','>',',','+',';','\\','"''.\n2. If sAMAccountName input contains special characters these will be replaced with the "_" character. The following characters are considered special regarding sAMAccountName\: '"','\\','/','[',']','\:',';','|','\=',',','+','*','?','<','>'.\n\n</pre>
 ]]></descriptionCdata>
   <annotation></annotation>
   <name>Create new AD user</name>
@@ -76,7 +75,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>host</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>192.168.1.30</value>
+          <value>192.168.1.164</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="a22bf039-fc87-4c56-9533-db9e5a1f6d8d">
@@ -89,7 +88,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>OU</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>CN=Users,DC=blackbox,DC=net</value>
+          <value>CN=Users</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="4016b5b8-6094-45a1-9f89-01357739d08d">
@@ -102,7 +101,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>userFullName</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>Khalil Abdo</value>
+          <value>Khalil Abdo2</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="89c97569-2878-4ab0-afd1-7b2f82bc463f">
@@ -115,7 +114,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>userPassword</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>{OBFUSCATED}nnfuPcMjqIE3+07tT5UJTA==</value>
+          <value>{OBFUSCATED}JDbHVxXjX0jtuuZ9C2rGCQ==</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="eb7c58e1-1eb7-4d9c-a1c0-6fe64fb5cf50">
@@ -128,7 +127,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>sAMAccountName</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>abdok</value>
+          <value>kabdo2</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="552baee6-8d95-48d8-a550-5bea39adbabd">
@@ -141,10 +140,10 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>altuser</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>mfadmin@blackbox.net</value>
+          <value>ds\abdok</value>
           <record>false</record>
         </staticBinding>
-        <userInputBinding id="9423d4b2-5f5b-4a92-a188-f2eeccb5bddc">
+        <staticBinding id="070243b0-04b5-41c8-ba92-6e671ca721d7">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -154,11 +153,9 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>altpass</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value>{OBFUSCATED}JDbHVxXjX0jtuuZ9C2rGCQ==</value>
           <record>false</record>
-          <prompt>747e1607-3100-4589-bf5b-4ee9b70a1608.9423d4b2-5f5b-4a92-a188-f2eeccb5bddc.prompt</prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
+        </staticBinding>
       </bindings>
       <transitions>
         <transition id="3410e2c1-6dc0-4226-8ecc-e8d874774266">
