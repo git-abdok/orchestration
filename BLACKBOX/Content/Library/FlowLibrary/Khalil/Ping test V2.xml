@@ -111,7 +111,7 @@
           <listDelimiter>,</listDelimiter>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="dca3d518-cf41-4ea9-b6bb-acbacf3b5c6a">
+        <staticBinding id="d1352276-d2df-4a8b-bb44-ab357a6e2449">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -123,7 +123,7 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>targetHost</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>localhost</value>
+          <value></value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="0e8aed70-d4f3-4129-956b-4b5c327b59ab">
