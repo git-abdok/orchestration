@@ -1174,6 +1174,37 @@ ac5db218-ed94-43e8-ae17-b11a55a0bc4f.description=This flow is used to Create Cha
         <refId>1c520e97-120e-4192-82e1-ca39f6dd0cd6</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="9b6d588e-3bd9-4a81-afd1-56aff11b6485">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>ChangeNumber</contextKey>
+          <expression id="2ab3d691-246c-4f1d-9839-92abe866ecfd">
+            <annotation></annotation>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters>
+              <stripWhitespaceFilter id="391ec8ae-1040-4150-b5ce-3b88c7bb6d03">
+                <annotation></annotation>
+                <name>Strip Whitespace</name>
+              </stripWhitespaceFilter>
+              <stripTrailingFilter id="4a720956-252f-464a-9df3-d975a2849962">
+                <annotation></annotation>
+                <name>Strip</name>
+                <strip>&quot;number&quot;:&quot;</strip>
+                <type>ALL_CHARACTERS_UP_TO_AND_INCLUDING</type>
+              </stripTrailingFilter>
+              <stripTrailingFilter id="9cf66934-50dc-4bd2-a740-e6543397f4e1">
+                <annotation></annotation>
+                <name>Strip</name>
+                <strip>&quot;,&quot;test_plan&quot;</strip>
+                <type>ALL_CHARACTERS_AFTER_AND_INCLUDING</type>
+              </stripTrailingFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="5706c3d3-cae2-4493-b93d-a2a7501dc3c9">
           <annotation></annotation>
           <name>assignment</name>
@@ -1248,7 +1279,7 @@ ac5db218-ed94-43e8-ae17-b11a55a0bc4f.description=This flow is used to Create Cha
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>systemId</contextKey>
           <expression id="ef6f1ee5-e115-4a23-9131-62f3c26481df">
             <annotation></annotation>
