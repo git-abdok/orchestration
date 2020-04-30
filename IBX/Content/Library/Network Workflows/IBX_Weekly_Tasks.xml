@@ -6,7 +6,7 @@
   <name>IBX_Weekly_Tasks</name>
   <categories/>
   <inputs>
-    <staticBinding id="3e86b4eb-0e87-40da-b8dc-f2707c6a11cc">
+    <userInputBinding id="191cc0bd-6ee7-4f77-98b2-76c234f4b402">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -16,9 +16,11 @@
       <isPersisted>true</isPersisted>
       <inputSymbol>TaskName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value></value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="3780e3c7-9a3c-47e7-9a85-91e5122c8466">
