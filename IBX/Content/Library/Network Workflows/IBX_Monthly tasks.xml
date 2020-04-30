@@ -7,19 +7,21 @@ a8df9851-4e2e-4c35-9a74-47fd7724a806.ee4dff1b-c6e4-407a-814d-06cd37c56ab6.descri
   <name>IBX_Monthly tasks</name>
   <categories/>
   <inputs>
-    <staticBinding id="65913ad0-94fc-4960-b55c-4d7074d35f50">
+    <userInputBinding id="04e36456-1ba2-4bd8-aa21-cc2a7c509793">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
       <inputType>STRING</inputType>
       <isList>false</isList>
-      <required>false</required>
+      <required>true</required>
       <isPersisted>true</isPersisted>
       <inputSymbol>TaskName</inputSymbol>
       <listDelimiter>,</listDelimiter>
-      <value></value>
       <record>false</record>
-    </staticBinding>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="14ac9ade-111c-466f-b6eb-5efdb4de9384">
