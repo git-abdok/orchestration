@@ -7,7 +7,7 @@ a8df9851-4e2e-4c35-9a74-47fd7724a806.ee4dff1b-c6e4-407a-814d-06cd37c56ab6.descri
   <name>IBX_Monthly tasks</name>
   <categories/>
   <inputs>
-    <userInputBinding id="04e36456-1ba2-4bd8-aa21-cc2a7c509793">
+    <staticBinding id="7126122b-de55-483f-a70a-0265032ab862">
       <annotation></annotation>
       <assignFromContext>false</assignFromContext>
       <assignToContext>false</assignToContext>
@@ -17,11 +17,9 @@ a8df9851-4e2e-4c35-9a74-47fd7724a806.ee4dff1b-c6e4-407a-814d-06cd37c56ab6.descri
       <isPersisted>true</isPersisted>
       <inputSymbol>TaskName</inputSymbol>
       <listDelimiter>,</listDelimiter>
+      <value>Run Diagnostics</value>
       <record>false</record>
-      <prompt></prompt>
-      <isMultiSelect>false</isMultiSelect>
-      <sourceDelimiter>|</sourceDelimiter>
-    </userInputBinding>
+    </staticBinding>
   </inputs>
   <possibleResponses>
     <opResponse id="14ac9ade-111c-466f-b6eb-5efdb4de9384">
@@ -82,9 +80,10 @@ a8df9851-4e2e-4c35-9a74-47fd7724a806.ee4dff1b-c6e4-407a-814d-06cd37c56ab6.descri
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="54043739-164a-41a7-a30d-d8907cfd33a4">
+        <staticBinding id="53886e2d-b93a-4085-a9a2-626a295922b1">
           <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
+          <fromContextKey>NAS_CORE</fromContextKey>
+          <assignFromContext>true</assignFromContext>
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
@@ -92,7 +91,7 @@ a8df9851-4e2e-4c35-9a74-47fd7724a806.ee4dff1b-c6e4-407a-814d-06cd37c56ab6.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>coreHost</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value></value>
+          <value>nacore</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="efb4204a-40ed-423d-97bd-929cbb922760">
@@ -105,7 +104,7 @@ a8df9851-4e2e-4c35-9a74-47fd7724a806.ee4dff1b-c6e4-407a-814d-06cd37c56ab6.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>corePort</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>443</value>
+          <value>80</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="917d7fc7-44df-45c5-ba5f-59974aa5fad9">
@@ -118,7 +117,7 @@ a8df9851-4e2e-4c35-9a74-47fd7724a806.ee4dff1b-c6e4-407a-814d-06cd37c56ab6.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>coreProtocol</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>https</value>
+          <value>http</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="688bbe34-ec6e-42f6-bfd3-2830ac81bccf">
@@ -131,10 +130,10 @@ a8df9851-4e2e-4c35-9a74-47fd7724a806.ee4dff1b-c6e4-407a-814d-06cd37c56ab6.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>coreUsername</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value></value>
+          <value>mfadmin</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="17d1b554-fd4c-484a-bcde-0e5f8a409cdd">
+        <staticBinding id="3878e57f-bc69-47ca-a473-b2af81ba1001">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -145,7 +144,7 @@ a8df9851-4e2e-4c35-9a74-47fd7724a806.ee4dff1b-c6e4-407a-814d-06cd37c56ab6.descri
           <isPersisted>false</isPersisted>
           <inputSymbol>corePassword</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value></value>
+          <value>{OBFUSCATED}nnfuPcMjqIE3+07tT5UJTA==</value>
           <record>false</record>
         </staticBinding>
         <userInputBinding id="60232508-5820-4bb7-9b42-c5f780026314">
@@ -199,6 +198,7 @@ a8df9851-4e2e-4c35-9a74-47fd7724a806.ee4dff1b-c6e4-407a-814d-06cd37c56ab6.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>groupName</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value>Inventory</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="74fc2824-5fde-4e8d-8a57-f639a78db471">
