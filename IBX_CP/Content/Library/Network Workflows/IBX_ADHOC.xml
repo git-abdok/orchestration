@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow id="d26c2462-ee22-4269-8043-e028e8dd554e">
-  <descriptionCdata><![CDATA[d26c2462-ee22-4269-8043-e028e8dd554e.1b97e6b0-798b-4888-8ab2-f9965f19fdf0.description=<pre>\nSimple operation that returns either "Yes" or "No" based on an input of the literal (e.g. "Yes" or "No", "True" or "False").  Uses include\:  prompting a user to select "Yes" or "No" from a selection list (e.g. "Would you like to check the status of another service?")\n\nDeprecated since 'Evaluate Expression' can be used instead.\n\nInput Parameters\:\ndecisionValue - Question to ask user\nyesValue - value of a yes answer\nnoValue - value of a no answer\n\nResponses\:\nsuccess - the user selected yes\nfailure - the user selected no\n</pre>
+  <descriptionCdata><![CDATA[d26c2462-ee22-4269-8043-e028e8dd554e.0f1c487a-5be7-4f70-aa48-382f6b4467a6.description=<pre>\nThis flow sends, stores or displays a notification message according to your notification type selection. You can use this flow to select how to be notified about the outcome of other flows. \n\nInputs\:\n    notifyData -  The content of the notification message.\n    notifyMethod - The notification type. This value is not case sensitive.\nValid values\: Write to File, Email, Display or None\n    subject - A summary of the notification content. \n    destination - The destination of the notification. You must specify a value for this input if "notifyMethod" is set to \u2018Email\u2019 or \u2018Write to File\u2019.\nValid values\: An email address or a file name\n    notificationServer - The email server used to send the notification email message. If "notifyMethod" is set to \u2018Email\u2019, you must specify a value for this input.\n    from - The email address of the sender of the notification email message.  If "notifyMethod" is set to \u2018Email\u2019, you must specify a value for this input.\n    serverPort - The notification service\u2019s server port. This field\u2019s value is used when the "notifyMethod" is \u2018Email\u2019, but it is optional.\nDefault value\: 25\n    htmlEmail - The value should be true if the email is in rich text/HTML format. The value should be false to send the email in plain text format.\nDefault value\: true\n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n\nNote\:\n    To schedule a flow that uses this flow, you need to supply all the required fields for the used notification method. For example, if "notifyMethod" is set to \u2018File\u2019, the "destination" input must also be specified.\n\nExamples\:\n    This is a valid input example for storing a notification message to a file\:\n      notifyData\: notificationContent\n      notifyMethod\: Write to File\n      subject\: notificationSubject\n      destination\: C\:\\Program File\\notification.txt\n</pre>
+d26c2462-ee22-4269-8043-e028e8dd554e.1b97e6b0-798b-4888-8ab2-f9965f19fdf0.description=<pre>\nSimple operation that returns either "Yes" or "No" based on an input of the literal (e.g. "Yes" or "No", "True" or "False").  Uses include\:  prompting a user to select "Yes" or "No" from a selection list (e.g. "Would you like to check the status of another service?")\n\nDeprecated since 'Evaluate Expression' can be used instead.\n\nInput Parameters\:\ndecisionValue - Question to ask user\nyesValue - value of a yes answer\nnoValue - value of a no answer\n\nResponses\:\nsuccess - the user selected yes\nfailure - the user selected no\n</pre>
 d26c2462-ee22-4269-8043-e028e8dd554e.978ee312-bd0a-4d7e-a93e-d545b7101966.prompt=Create Change Ticket in ServiceNow ?
 d26c2462-ee22-4269-8043-e028e8dd554e.b02a2da8-bd40-48ed-b890-f3ab1779bf2e.prompt=Create Change Ticket in ServiceNow ?
 d26c2462-ee22-4269-8043-e028e8dd554e.b67aef88-3d9a-4e48-97d5-832abcd462a4.description=<pre>Edits a NAS task\n\nNote\: Approval workflow must be properly configured in NA to use the approve input. This can be configured in the Admin -> Workflow menu item in the NA administration web page.\n\nInputs\:\ncoreHost - The DNS name or IP Address of your NAS core.\ncorePort - The port to connect to your NAS core on.\ncoreProtocol - The protocol to connect to your NAS core with. Either HTTP or HTTPS.\ncoreUsername - The username for the NAS core.\ncorePassword - The password for the NAS user.\nid - The ID of the object to process.\nretryInterval - The number of seconds between retries.\nexpensive - Is the task expensive?\ndays - This argument differs depending on the task. For weekly tasks, -days should be a comma-separated list of weekdays. Each item in the list is a day of the week upon which the task should be run. Valid weekdays are\: sun, mon, tue, wed, thur, fri, sat. For monthly tasks, -days should be a single integer between 1 and 31, corresponding to the day of the month upon which the task should be run.\nretryCount - Number of times to retry\nrepeatType - The metric by which a task repeats. Valid values are 1\: once, 2\: periodically, 3\: daily, 4\: weekly, 5\: monthly. If you modify this value, then modify repeat interval or days accordingly.\nduration - Estimated duration the task will run (in minutes)\nstartDate - Date of the start of the task. May be in one of the following formats\: YYYY-MM-DD HH\:MM\:SS e.g. 2002-09-06 12\:30\:00 YYYY-MM-DD HH\:MM e.g. 2002-09-06 12\:30 YYYY-MM-DD e.g. 2002-09-06 YYYY/MM/DD e.g. 2002/09/06 YYYY\:MM\:DD\:HH\:MM e.g. 2002\:09\:06\:12\:30 Or, one of\: now, today, yesterday, tomorrow Or, in the format\: "  " e.g. "3 days ago"  is a positive integer; is one of\: seconds, minutes, hours, days, weeks, months, years;  is one of\: ago, before, later, after.\nrepeatInterval - This option differs depending on the task. For Periodic tasks, this is the period in minutes. For Monthly tasks, each bit of the integer (except the last) represents a day, but we recommend using the -days option to modify the days on which a monthly task runs. This option is invalid with all other tasks.\napprove - Whether to approve the task or not. Rejects if false.\noverrideApproval - Override the approval requirement\ncustomFieldName - The custom field name\ncustomFieldValue - The custom field value\ncomment - The comment to tie to this action.\n\nResponses\:\nsuccess - The operation completed successfully.\nfailure - Something went wrong.\n\nReturns\:\nreturnResult - Text result of NAS task modification call\n\nExtra Results\:\ncommandStatus - The status of the NAS command.\ntext - The response text of the NAS command.\nstackTrace - The stack trace (If any) of the NAS command.</pre>
@@ -575,7 +576,7 @@ d26c2462-ee22-4269-8043-e028e8dd554e.eb80fac1-58d8-4af9-ac9f-20989460a766.descri
       <name>Create Snow Change Ticket</name>
       <bounds>
         <x>421.0</x>
-        <y>276.0</y>
+        <y>278.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -710,7 +711,7 @@ d26c2462-ee22-4269-8043-e028e8dd554e.eb80fac1-58d8-4af9-ac9f-20989460a766.descri
       <name>Create Change</name>
       <bounds>
         <x>642.0</x>
-        <y>275.0</y>
+        <y>278.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -1258,7 +1259,218 @@ d26c2462-ee22-4269-8043-e028e8dd554e.eb80fac1-58d8-4af9-ac9f-20989460a766.descri
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="0b93e00b-fcab-4090-ae79-2a29ca7cc71f">
+        <transition id="9ea68486-1ca4-4a65-91e8-45bbeab82cfb">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>0f1c487a-5be7-4f70-aa48-382f6b4467a6</refId>
+          </destination>
+          <source>
+            <refId>eb80fac1-58d8-4af9-ac9f-20989460a766</refId>
+          </source>
+          <positions>
+            <point>
+              <x>692.0</x>
+              <y>309.0</y>
+            </point>
+            <point>
+              <x>952.0</x>
+              <y>328.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>ccaa0a0f-0d0f-4228-803a-328c92908f88</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="0f1c487a-5be7-4f70-aa48-382f6b4467a6">
+      <annotation>d26c2462-ee22-4269-8043-e028e8dd554e.0f1c487a-5be7-4f70-aa48-382f6b4467a6.description</annotation>
+      <name>Notify</name>
+      <bounds>
+        <x>902.0</x>
+        <y>278.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <stepRerun>rerun</stepRerun>
+      <bindings>
+        <staticBinding id="bb8414e3-9b99-43cc-995b-7a915ecaf2be">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey></fromContextKey>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>notifyData</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>&lt;p&gt;A new Amazon EC2 Instance has been successfully created&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Here is your new Host&lt;/strong&gt;&lt;/span&gt; :&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color: #3366ff;&quot;&gt;${hostname}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;strong&gt;IP Address&lt;/strong&gt; : &lt;span style=&quot;color: #3366ff;&quot;&gt;${ipAddress}&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MAC Address&lt;/strong&gt; :&lt;span style=&quot;color: #3366ff;&quot;&gt; ${macAddress}&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;You can log in to your new EC2 instance with the following access information :&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Login Information :&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hostname&lt;/strong&gt; :&amp;nbsp;&lt;span style=&quot;color: #3366ff;&quot;&gt;${fqdn}&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;User ID&lt;/span&gt;&lt;/strong&gt; : &lt;span style=&quot;color: #3366ff;&quot;&gt;Administrator&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;Password&lt;/span&gt;&lt;/strong&gt; :&lt;span style=&quot;color: #3366ff;&quot;&gt; ${password}&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;text-align: right;&quot;&gt;&lt;br /&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;span style=&quot;color: #3366ff;&quot;&gt;Powered By&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;img src=&quot;http://127.0.0.1:9000/images/login/mf_logo.png&quot; alt=&quot;Micro Focus Logo&quot; width=&quot;124&quot; height=&quot;30&quot; /&gt;&lt;/p&gt;</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="f11c2a54-3e09-4832-96dc-a5fe84efb42d">
+          <annotation></annotation>
+          <toContextKey></toContextKey>
+          <fromContextKey></fromContextKey>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>notifyMethod</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>email</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="f2c050fa-2e01-47b1-9aeb-b2ceb8262907">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>subject</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>EC2 Instance - ${instanceId} was successfully created</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="44ca4930-007d-4b57-bf7a-302b3d4547c6">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>destination</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>khalil.abdo@blackbox.net</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="f1549aab-b8ff-4e91-9653-7cf94fcc5418">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>notificationServer</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>127.0.0.1</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="65eb0051-271e-4312-9299-283418f12cfc">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>from</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>Micro-Focus-Admin@Blackbox.net</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="f3e67d31-2e2c-4336-b385-e78e2a0e51a2">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>serverPort</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>25</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="1f876070-32a3-4717-9d79-75073db15bff">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>htmlEmail</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>true</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="cfd76c63-f436-4d2f-b4de-857678a4b6da">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>073d4978-a765-49ee-b7cd-a968f852bc34</refId>
+          </destination>
+          <source>
+            <refId>0f1c487a-5be7-4f70-aa48-382f6b4467a6</refId>
+          </source>
+          <positions>
+            <point>
+              <x>952.0</x>
+              <y>328.0</y>
+            </point>
+            <point>
+              <x>468.0</x>
+              <y>154.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="e7fa3d18-4c15-48bd-9a38-616c624001e7">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -1270,12 +1482,12 @@ d26c2462-ee22-4269-8043-e028e8dd554e.eb80fac1-58d8-4af9-ac9f-20989460a766.descri
             <refId>ca4c3b5b-6ba2-4701-b861-205c8f0e493c</refId>
           </destination>
           <source>
-            <refId>eb80fac1-58d8-4af9-ac9f-20989460a766</refId>
+            <refId>0f1c487a-5be7-4f70-aa48-382f6b4467a6</refId>
           </source>
           <positions>
             <point>
-              <x>692.0</x>
-              <y>309.0</y>
+              <x>952.0</x>
+              <y>328.0</y>
             </point>
             <point>
               <x>472.0</x>
@@ -1290,7 +1502,7 @@ d26c2462-ee22-4269-8043-e028e8dd554e.eb80fac1-58d8-4af9-ac9f-20989460a766.descri
       </transitions>
       <properties/>
       <opRef>
-        <refId>ccaa0a0f-0d0f-4228-803a-328c92908f88</refId>
+        <refId>29baf272-4192-4862-9436-2c6f601b42a9</refId>
       </opRef>
       <assignments/>
       <throttleSize>0</throttleSize>

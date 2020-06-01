@@ -87,8 +87,8 @@
       <annotation>16b87793-86dc-4769-8eb5-e2f78ad95995.2fd92878-416e-484c-b8ad-6edebabcb881.description</annotation>
       <name>Take Snapshot</name>
       <bounds>
-        <x>208.0</x>
-        <y>117.0</y>
+        <x>200.0</x>
+        <y>158.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
